@@ -86,7 +86,7 @@ nav {
     flex-direction: column;
     align-items: center;
     border: solid 2px gray;
-    height: 500px;
+    height: auto;
     padding: 10px;
 }
 
