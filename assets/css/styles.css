@@ -1,0 +1,181 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+body {
+    display: grid;
+    grid-template-areas:
+    "navbar"
+    "buscador"
+    "main"
+    "footer";
+    grid-template-columns: 100%;
+    grid-template-rows: 90px 100px calc(100vh - 90px - 100px - 90px) 90px;
+
+}
+
+/* NAVBAR */
+nav {
+    display: flex;
+    justify-content: center;
+    grid-area: navbar;
+    background-color: rgb(14, 13, 60);
+    color: gray;
+}
+
+.titulo_navbar {
+    display: flex;
+    align-items: center;
+    padding-left: 25px;
+}
+
+.titulo_navbar h3 {
+    padding-left: 10px;
+}
+
+.icono {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+}
+
+.hamburguesa {
+    display: none;
+}
+
+.hamburguesa li {
+    border: none;
+    color: gray
+}
+
+/* BUSCADOR */
+.buscador {
+    display: flex;
+    flex-direction: column;
+    grid-area: buscador;
+   background-color: gray;
+}
+
+.buscador h4 {
+    text-align: center;
+    color: white;
+    margin: 10px;
+}
+
+.buscador input {
+    height: 45px;
+    margin: 0 50px;
+}
+
+/* MAIN  */
+.main {
+    display: flex;
+    flex-direction: column;
+    grid-area: main;
+    background-color: whitesmoke;
+}
+
+.cards {
+    overflow-y: scroll;
+    overflow-x: none;
+    height: 100%;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: solid 2px gray;
+    height: 500px;
+    padding: 10px;
+}
+
+.card img {
+    height: 400px;
+    width: 400px;
+}
+
+.card h5 {
+    font-size: 1.5em;
+}
+
+.card button {
+    height: 50px;
+    width: 130px;
+    color: rgb(16, 15, 49);
+    background-color: gray;
+    border: 3px black;
+}
+
+.paginas  {
+    display: flex ;
+    justify-content: center;
+    align-items: center;
+    height: 35px;
+}
+
+.paginas a {
+    border: solid 2px gray;
+    text-decoration: none;
+    padding: 5px;
+}
+
+ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ul li {
+    list-style: none;
+    border: solid 2px rgb(197, 197, 222);
+    padding: 4px;
+    color: rgb(4, 15, 77);
+}
+
+/* FOOTER */
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    grid-area: footer;
+    background-color: gray;
+    min-height: 100%;
+}
+
+@media(min-width:576px){
+    body {
+        grid-template-areas:
+        "navbar buscador"
+        "navbar main"
+        "footer main";
+        grid-template-columns: 200px calc(100vw - 200px);
+        grid-template-rows: 100px calc(100vh - 100px - 160px)160px;
+    }
+    nav {
+        display: flex;
+        justify-content: start;
+        flex-direction: column;
+        padding-top: 20px;
+        }
+    .icono {
+        display: none;
+    }
+    .hamburguesa {
+        display: inline-block;
+        text-align: center;
+        padding: 20px;
+    }
+    .cards {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    .cards img {
+        width: 100%;
+
+    }
+    footer {
+        height: 100%;
+    }
+}
